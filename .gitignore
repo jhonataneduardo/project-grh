@@ -1,0 +1,11 @@
+# Files
+*.db.sqlite3
+pip-selfcheck.json
+pyvenv.cfg
+
+# Directory
+include/
+.idea/
+bin/
+lib/
+lib64
