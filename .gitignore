@@ -1,5 +1,5 @@
 # Files
-src/*.db.sqlite3
+src/db.sqlite3
 pip-selfcheck.json
 pyvenv.cfg
 *.pyc
