@@ -3,8 +3,19 @@
 {% block main %}
     <div class="row">
         <div class="col">
-            <a href="{% url 'logout' %}">Logout</a>
+            Olá, {{ usuario.employee.name }}
         </div>
-        <div class="col"></div>
+        <div class="col">
+        </div>
+        <div class="col">
+            <a href="{% url 'logout' %}">Logout</a>
+            {% if usuario.employee.company %}
+                <a href="{% url 'company_update' usuario.employee.company.id %}">Editar Empresa</a>
+            {% else %}
+                <a href="{% url 'company_create' %}">Cadastrar empresa</a>
+            {% endif %}
+
+        </div>
     </div>
+
 {% endblock %}
