@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import  reverse
+from django.urls import reverse
 
 class Company(models.Model):
     name = models.CharField(max_length=120, help_text="Company name")

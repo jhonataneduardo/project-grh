@@ -16,4 +16,4 @@ class CompanyCreate(CreateView):
 
 class CompanyUpdate(UpdateView):
     model = Company
-    fields = ['name' ]
+    fields = ['name']
