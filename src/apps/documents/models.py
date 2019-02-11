@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from ..employees.models import Employee
 
 class Document(models.Model):
@@ -8,3 +10,6 @@ class Document(models.Model):
 
     def __str__(self):
         return self.description
+
+    # def get_absolute_url(self):
+    #     return reverse('employees_update', args=[self.belongs_to.id])
