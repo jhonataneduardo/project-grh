@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 {% block main %}
-    {{ object }}
     <form method="post">
         {% csrf_token %}
         {{ form|bootstrap }}
