@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from ..employees.models import Employee
 
 
@@ -9,3 +11,6 @@ class RegisterHour(models.Model):
 
     def __str__(self):
         return self.employee.name
+
+    def get_absolute_url(self):
+        return reverse('register_hours_update', args=[self.id])
