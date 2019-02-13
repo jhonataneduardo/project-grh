@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .models import RegisterHour
 
 
@@ -22,3 +22,8 @@ class RegisterHourUpdate(UpdateView):
 class RegisterHourDelete(DeleteView):
     model = RegisterHour
     success_url = reverse_lazy('register_hours_list')
+
+
+class RegisterHourCreate(CreateView):
+    model = RegisterHour
+    fields = ['justification', 'hours', 'employee']
