@@ -3,7 +3,8 @@
 {% block main %}
 
     {% for register in object_list %}
-        {{ register.employee }} | {{ register.justification }} <br>
+        {{ register.employee }} | {{ register.justification }} - {{ register.hours }} |
+        <a href="{% url 'register_hours_update' register.id %}">Editar</a> <br>
     {% endfor %}
 
 {% endblock main %}
