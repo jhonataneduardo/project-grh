@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    {% for register in object_list %}
+        {{ register.employee }} | {{ register.justification }} <br>
+    {% endfor %}
+
+{% endblock main %}
