@@ -8,8 +8,26 @@
     </form>
     <br>
     <a href="{% url 'documents_create' object.id %}" class="btn btn-primary">Adicionar Documento</a>
-
+    <div class="row">
+    <div class="col-md-12">
+        <h3>Documentos do Funcionário</h3>
+    </div>
     {% for document in object.document_set.all %}
-        {{ document }}
+        <div class="col-md-3">
+            <img src="{{ document.file.url }}" alt="">
+            <p>{{ document.description }}</p>
+        </div>
     {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Banco de Horas</h3>
+        </div>
+        {% for register in object.registerhour_set.all %}
+        <div class="col-md-3">
+            <p><strong>Justificativa:</strong> {{ register.justification }}</p>
+            <p><strong>Horas Extras:</strong> {{ register.hours }}</p>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock main %}
