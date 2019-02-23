@@ -13,4 +13,4 @@ class RegisterHourForm(ModelForm):
 
     class Meta:
         model = RegisterHour
-        fields = ['justification', 'hours', 'employee']
+        fields = ['justification', 'hours', 'employee', 'is_used']

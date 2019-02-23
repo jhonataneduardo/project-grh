@@ -8,6 +8,7 @@ class RegisterHour(models.Model):
     justification = models.CharField(max_length=120)
     employee = models.ForeignKey(Employee, on_delete=models.PROTECT)
     hours = models.DecimalField(max_digits=5, decimal_places=2)
+    is_used = models.BooleanField(default=False )
 
     def __str__(self):
         return self.employee.name

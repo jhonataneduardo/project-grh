@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+import json
 from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.views.generic import View
 from .models import RegisterHour
 from .forms import RegisterHourForm
 
@@ -38,3 +40,13 @@ class RegisterHourCreate(CreateView):
         kwargs = super(RegisterHourCreate, self).get_form_kwargs()
         kwargs.update({'user': self.request.user})
         return kwargs
+
+class TesteView(View):
+    def post(self, *args, **kwargs):
+        response = json.dumps({'mensagem': 'Requisição executada'})
+        register_obj = RegisterHour.objects.get(id=kwargs['pk'])
+        register_obj.is_used = True
+        register_obj.save()
+
+        return HttpResponse(response, content_type='application/json')
+

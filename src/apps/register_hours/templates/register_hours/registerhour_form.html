@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load bootstrap %}
 {% block main %}
     <form method="post">
         {% csrf_token %}
         {{ form|bootstrap }}
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    <button onclick="teste({{ object.id }});" type="button" class="btn btn-info">Teste</button>
     </form>
+    <br>
+    <p id="mensagem"></p>
 {% endblock main %}
+
+{% block static %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/functions-ajax.js' %}"></script>
+{% endblock %}
