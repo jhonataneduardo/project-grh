@@ -7,7 +7,7 @@ SECRET_KEY = '7w*sg68gw@#ee=_ql(dz%7kp!9x1_ohcj)u8gb@j&i!jcwje$u'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.208.154.198']
+ALLOWED_HOSTS = ['3.208.154.198', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'apps.base',
 
     'bootstrapform',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +101,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 
