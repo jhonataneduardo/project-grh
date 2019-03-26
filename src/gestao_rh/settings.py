@@ -118,3 +118,11 @@ CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+# SMTP
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'jhonatanepp@gmail.com'
+EMAIL_HOST_PASSWORD = 'tapanacara'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True

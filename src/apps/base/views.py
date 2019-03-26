@@ -1,10 +1,15 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from .tasks import send_relatorio
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from apps.base.serializers import UserSerializer, GroupSerializer
 
+
+def celery(request):
+    send_relatorio()
+    return HttpResponse('Foi')
 
 
 @login_required
